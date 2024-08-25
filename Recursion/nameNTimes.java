@@ -39,7 +39,7 @@ public class nameNTimes {
 
     public static void printNumRevBacktrack(int i,int n){
         if(i>n){
-            return;
+            return;                                   
         }
         printNumRevBacktrack(i+1, n);
         System.out.println(i);
@@ -49,17 +49,33 @@ public class nameNTimes {
     public static void printSum(int n,int sum){
         if(n<1){
             System.out.println(sum);
-            return;
+            return;                                      //parameter recurtion
         }
         printSum(n-1,sum+n);
     }
 
     public static int printSum2(int n){
         if(n<1){
-            return 0;
+            return 0;                                   //functional recurtion
         }
         return n+printSum2(n-1);
     }
+
+    public static int printfact1(int n){
+        if(n==0){
+            return 1;                                    //fuctional recurtion
+        }
+        return n*printfact1(n-1);
+    }
+
+    public static void  printfact2(int n,int fact){
+        if(n<1){
+            System.out.println(fact);
+            return ;
+        }
+        printfact2(n-1,fact*n);
+    }
+
     public static void main(String[] args) {
         printNamr(1,5);
         System.out.println();
@@ -74,6 +90,10 @@ public class nameNTimes {
         printSum(3,0);
         System.out.println();
         System.out.println(printSum2(3));
+        System.out.println();
+        System.out.println(printfact1(5));
+        System.out.println();
+        printfact2(5,1);
 
 
     }
